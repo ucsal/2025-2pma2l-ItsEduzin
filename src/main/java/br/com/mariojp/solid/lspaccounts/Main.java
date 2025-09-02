@@ -1,7 +1,4 @@
-import br.com.mariojp.solid.lspaccounts.BankService;
-import br.com.mariojp.solid.lspaccounts.CheckingAccount;
-import br.com.mariojp.solid.lspaccounts.SavingsAccount;
-
+package br.com.mariojp.solid.lspaccounts;
 public class Main {
     public static void main(String[] args) {
         CheckingAccount checking = new CheckingAccount();
@@ -11,8 +8,6 @@ public class Main {
 
         SavingsAccount savings = new SavingsAccount();
         savings.deposit(100);
-        // Estado inicial: irá lançar UnsupportedOperationException (ilustra o problema LSP).
-        new BankService().processWithdrawal(savings, 30);
         System.out.println("Savings balance: " + savings.getBalance());
     }
 }
